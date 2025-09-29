@@ -1,0 +1,200 @@
+* 
+=========================================
+ARCHIVO: style.css
+Propósito:
+  - Definir los estilos visuales para la página personal en formato de hoja de vida.
+  - Mantener el contenido (HTML) separado de la presentación (CSS).
+=========================================
+*/
+
+/* ----------- Estilos generales ----------- */
+
+/* Estilo base del body (cuerpo de la página) */
+body {
+  margin: 0; /* elimina el margen por defecto */
+  font-family: Arial, sans-serif; /* fuente principal */
+  background: #f5f7fb; /* color de fondo claro */
+  color: #0f172a; /* color de texto principal */
+  line-height: 1.6; /* espacio entre líneas */
+}
+
+/* Contenedor principal de la página */
+.page {
+  max-width: 1000px; /* ancho máximo de la página */
+  margin: 24px auto; /* centra la página con márgenes */
+  padding: 0 16px; /* espacio lateral */
+}
+
+/* ----------- Encabezado ----------- */
+
+/* Caja superior con nombre y datos */
+header {
+  background: #fff; /* fondo blanco */
+  border: 1px solid #e2e8f0; /* borde gris claro */
+  border-radius: 14px; /* esquinas redondeadas */
+  padding: 20px 24px; /* espacio interno */
+  margin-bottom: 16px; /* espacio debajo */
+}
+
+/* Título principal (nombre) */
+h1 {
+  margin: 0 0 6px; /* margen inferior */
+}
+
+/* Subtítulo (correo, perfil, ciudad) */
+.subtitle {
+  color: #475569; /* color gris azulado */
+  margin: 0; /* sin margen adicional */
+}
+
+/* ----------- Diseño de columnas ----------- */
+
+/* Grid con dos columnas: izquierda (sidebar) y derecha (contenido) */
+.grid {
+  display: grid; /* activa sistema de cuadrícula */
+  gap: 16px; /* espacio entre columnas */
+  grid-template-columns: 320px 1fr; /* columna izquierda fija y derecha flexible */
+}
+
+/* Vista en pantallas pequeñas: una sola columna */
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------- Tarjetas de contenido ----------- */
+
+/* Cada bloque (perfil, habilidades, redes, etc.) */
+.card {
+  background: #fff; /* fondo blanco */
+  border: 1px solid #e2e8f0; /* borde gris claro */
+  border-radius: 14px; /* esquinas redondeadas */
+  padding: 18px 20px; /* espacio interno */
+  margin-bottom: 16px; /* espacio entre bloques */
+}
+
+/* Títulos de secciones */
+h2 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+/* Subtítulos más pequeños */
+h3 {
+  margin: 12px 0 8px;
+}
+
+/* ----------- Imagen de perfil ----------- */
+
+/* Estilo de la foto personal */
+img.photo {
+  width: 100%; /* ocupa todo el ancho disponible */
+  border-radius: 12px; /* esquinas redondeadas */
+  border: 1px solid #e2e8f0; /* borde gris claro */
+  object-fit: cover; /* recorta para mantener proporción */
+}
+
+/* ----------- Listas y enlaces ----------- */
+
+/* Márgenes de listas */
+ul, ol {
+  margin: 6px 0 10px 20px;
+}
+
+/* Estilo de enlaces */
+a {
+  color: #2563eb; /* azul */
+  text-decoration: none; /* quita el subrayado */
+}
+a:hover {
+  text-decoration: underline; /* subrayado al pasar el mouse */
+}
+
+/* ----------- Tabla ----------- */
+
+/* Estilo de la tabla de horario */
+table {
+  width: 100%; /* ocupa todo el ancho */
+  border-collapse: collapse; /* elimina bordes dobles */
+}
+
+/* Cabecera de la tabla */
+thead th {
+  background: #f1f5f9; /* fondo gris claro */
+  padding: 8px; /* espacio interno */
+  text-align: left; /* texto alineado a la izquierda */
+}
+
+/* Celdas de tabla */
+th, td {
+  border: 1px solid #e2e8f0; /* bordes internos */
+  padding: 8px;
+  vertical-align: top;
+}
+
+/* ----------- Formulario ----------- */
+
+/* Formulario con disposición en columnas */
+form {
+  display: grid;
+  gap: 10px; /* espacio entre campos */
+  max-width: 560px; /* ancho máximo */
+}
+
+/* Etiquetas de campos */
+label {
+  font-weight: 600; /* texto en negrita */
+}
+
+/* Campos de texto, correo y textarea */
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+/* Área de texto más grande */
+textarea {
+  min-height: 120px;
+  resize: vertical; /* permite redimensionar verticalmente */
+}
+
+/* Botón del formulario */
+.btn {
+  border: none;
+  background: #2563eb; /* azul */
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn:hover {
+  filter: brightness(.95); /* efecto al pasar el mouse */
+}
+
+/* ----------- Columnas internas ----------- */
+
+/* Dos columnas dentro de una sección (pasatiempos / tareas) */
+.two-col {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* En pantallas pequeñas se apila en una sola columna */
+@media(max-width: 600px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------- Impresión en PDF (A4) ----------- */
+
+/* Ajuste de tamaño de impresión */
+@page {
+  size: A4;
+  margin: 14mm;
+}
